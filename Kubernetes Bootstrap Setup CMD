@@ -1,0 +1,15 @@
+# Run the below cmd to setup the netowrk in master node
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+#Once you run the above cmd in master node you will get belwo two steps to be run (set up the local kubeconfig:) to make cluster ready
+#1. setup kubeconfig
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+#2. copy the below key from master node and used to configure to node using below Key, this would be unique for your environment so copy these and run in node server to join in the clusters
+
+sudo kubeadm join 172.31.42.148:6443 --token ud0g2v.yblmzngqfmbqxyua --discovery-token-ca-cert-hash sha256:5c9a558d15aaa2bc72fbc3f3654db8deb89fc861295fd11a446bf205bb4ce28a
+
+# once done Run below cmd on master to check and running node in cluster.
+
+kubectl get node
