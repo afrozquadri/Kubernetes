@@ -12,3 +12,7 @@ sudo apt-get update
 sudo apt-get install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00
 # RUN the beklow command to hold the new version to be isntalled
 sudo apt-mark hold kubelet kubeadm kubectl
+#RUN below CMD to check the successfully installed the Kubernetes component
+kubeadm version
+kubectl version
+kubelet version
