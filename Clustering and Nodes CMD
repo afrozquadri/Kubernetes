@@ -1,0 +1,6 @@
+#Get the node status 
+kubectl get nodes
+#Get the more information about the nodes
+kubectl describe node $node_name
+# Get more information about the spesific node 
+kubectl describe node NODENAME
