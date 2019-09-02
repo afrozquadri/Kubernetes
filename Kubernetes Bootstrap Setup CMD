@@ -14,15 +14,15 @@ sudo kubeadm join 172.31.42.148:6443 --token ud0g2v.yblmzngqfmbqxyua --discovery
 
 kubectl get node
 
-# you will see the status is "NOTREADY" since we have not setup the netwrok yet so follow along in below steps to configure the network.
+# you will see the status is "NOTREADY" since we have not setup the netwrok yet so follow along in below steps to configure the network in master as well as in worker node
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 #Run below cmd to take immediate affect of above config.
 sudo sysctl -p
 
-#Run below below cmd in only mater server ONLY as this creates contole plane for master to handle the node.
+#Run below below cmd in only mater server ONLY as this creates Flannel for master to handle the node.
 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
-#Run below cmd for YOYO.
+#Run below cmd to check the STATUS and now you will in READY state.
 kubectl get node
 #run below CMD to see the running pods. YOYO
 
