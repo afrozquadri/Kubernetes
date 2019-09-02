@@ -4,5 +4,5 @@ kubectl get nodes
 kubectl describe node $node_name
 # Get more information about the spesific node 
 kubectl describe node NODENAME
-Check the status of the kubelet service:
+#Check the status of the kubelet service:
 sudo systemctl status kubelet
