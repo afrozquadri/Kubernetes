@@ -1,6 +1,8 @@
-#Get the node status 
+#Get the all node running status in  cluster
 kubectl get nodes
 #Get the more information about the nodes
 kubectl describe node $node_name
 # Get more information about the spesific node 
 kubectl describe node NODENAME
+Check the status of the kubelet service:
+sudo systemctl status kubelet
