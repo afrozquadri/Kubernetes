@@ -14,5 +14,7 @@ EOF
 kubectl get pods
 #Get more information about your nginx pod:
 kubectl describe pod nginx
+#List all the pods in cluster
+kubectl get pods -n kube-system
 #Delete the pod:
 kubectl delete pod nginx
