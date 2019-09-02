@@ -1,0 +1,14 @@
+# Same we have to for Kubernetes as well
+
+#Install the GPG Key as we did for docker
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+#below is the packages for Kubernetes
+cat << EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+#RUN the update every time once stage the pakages 
+sudo apt-get update
+#Run the below kuberenetes components 
+sudo apt-get install -y kubelet=1.12.7-00 kubeadm=1.12.7-00 kubectl=1.12.7-00
+# RUN the beklow command to hold the new version to be isntalled
+sudo apt-mark hold kubelet kubeadm kubectl
