@@ -1,2 +1,2 @@
 # Kubernetes
-Kubernetes follow by Linuxacademy
+Kubernetes followed by Linuxacademy
